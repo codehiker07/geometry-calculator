@@ -3,24 +3,24 @@ function calculateTriangleArea() {
     const baseValue = document.getElementById('triangle-base');
     const baseValueText = baseValue.value;
     const baseValueFloat = parseFloat(baseValueText);
-    // console.log(baseValueFloat);
 
     //Get Triangle Height Input Value
     const heightValue = document.getElementById('triangle-height');
     const heightValueText = heightValue.value;
     const heightValueFloat = parseFloat(heightValueText);
-    // console.log(heightValueFloat);
+
+    //Validate Input
+    if (isNaN(baseValueFloat) || isNaN(heightValueFloat)) {
+        alert('Please insert a number');
+        return;
+    }
 
     //Calculate Area
     const area = 0.5 * baseValueFloat * heightValueFloat;
-    // console.log(area);
 
     //Show Triangle Area
     const calculatedAreaSpan = document.getElementById('calculated-area-span')
     calculatedAreaSpan.innerText = area;
-
-    //Clear Input Areas
-
 }
 
 function calculateRectangleArea() {
@@ -29,11 +29,16 @@ function calculateRectangleArea() {
     const widthValueText = widthValue.value;
     const widthValueFloat = parseFloat(widthValueText);
 
-
     //Rectangle Input length Value
     const lengthValue = document.getElementById('rectangle-length');
     const lengthValueText = lengthValue.value;
     const lengthValueFloat = parseFloat(lengthValueText);
+
+    //Validate Input
+    if (isNaN(widthValueFloat) || isNaN(lengthValueFloat)) {
+        alert('Please insert a number');
+        return;
+    }
 
     //Calculate Area
     const rectangleArea = widthValueFloat * lengthValueFloat;
@@ -42,9 +47,8 @@ function calculateRectangleArea() {
     //Show Triangle Area
     const calculatedRectangleAreaSpan = document.getElementById('calculated-rectangle-span')
     calculatedRectangleAreaSpan.innerText = rectangleArea;
-
-    //Clear Input Areas
 }
+
 
 
 //Reuseable Function For Parallelogram Area//
@@ -52,7 +56,11 @@ function calculateRectangleArea() {
 function calculateParallelogramArea() {
     const base = getInputValue('parallelogram-base');
     const height = getInputValue('parallelogram-height');
-
+    //Validate Input
+    if (isNaN(base) || isNaN(height)) {
+        alert('Please insert a number');
+        return;
+    }
     const area = base * height;
     setElementInnerText('calculated-parallelogram-span', area);
 
@@ -63,6 +71,11 @@ function calculateEllipseArea() {
     const minorRadius = getInputValue('minor-radius');
     const area = 3.14 * majorRadius * minorRadius;
     setElementInnerText('calculated-ellipse-span', area)
+    //Validate Input
+    if (isNaN(majorRadius) || isNaN(minorRadius)) {
+        alert('Please insert a number');
+        return;
+    }
 }
 
 
