@@ -85,9 +85,33 @@
                     </div>
                 </div>
 
+
+
                 <!-- Area Calculator -->
                 <div class="w-[400px] bg-orange-100">
                     <div class="text-3xl font-semibold text-center underline p-5">Area Calculation</div>
+                </div>
+                <!-- Ellipse Card -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="/images/ellipse.png" alt="Parallelogram" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title font-bold">Ellipse</h2>
+                        <p class="font-semibold">Area (A) = π X a X b</p>
+                        <p class="py-3">
+                            <input type="text" name="" id="minor-radius" placeholder="base"
+                                class="border w-24 px-2 bg-gray-200">
+                            <span class="ml-2">cm</span>
+                            <input type="text" name="" id="major-radius" placeholder="height"
+                                class="border w-24 px-2 ml-5 bg-gray-200">
+                            <span class="ml-2">cm</span>
+                        </p>
+                        <p class="font-semibold text-xl text-red-600">Area: <span id="calculated-ellipse-span">0</span>
+                            cm<sup>2</sup></p>
+                        <div class="card-actions justify-center">
+                            <button onclick="calculateEllipseArea()"
+                                class="btn btn-primary text-white w-full">Calculate</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
