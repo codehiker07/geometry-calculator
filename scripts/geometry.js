@@ -45,3 +45,22 @@ function calculateRectangleArea() {
 
     //Clear Input Areas
 }
+
+
+//Reuseable Function For Parallelogram Area//
+
+function calculateParallelogramArea() {
+    const base = getInputValue('parallelogram-base');
+    const height = getInputValue('parallelogram-height');
+    const area = base * height;
+    const calculatedParallelogramSpan = document.getElementById('calculated-parallelogram-span');
+    calculatedParallelogramSpan.innerText = area;
+}
+//Reuseable Function
+function getInputValue(fieldId) {
+    const getInputValue = document.getElementById(fieldId);
+    const getInputText = getInputValue.value;
+    const getInputValueFloat = parseFloat(getInputText);
+    return getInputValueFloat;
+
+}
